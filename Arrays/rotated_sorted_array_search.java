@@ -6,14 +6,17 @@ public class rotated_sorted_array_search{
         System.out.print(targetIndex);
     }
     static int search(int nums[],int target){
+        // min will index of the smallest element of the array
         int min = searchSmallest(nums);
         // now let's find the element in sorted left array where start = min , end = nums.length-1
         if(nums[min] <= target && target <= nums[nums.length-1]){
            return search(nums,min,nums.length-1,target);
         }else{
+            // find in sorted right where start = 0, end = min
            return search(nums,0,min,target);
         }
     }
+    // finding out the smallest element of the array
     static int searchSmallest(int nums[]){
         int start = 0;
         int end = nums.length -1;
@@ -25,6 +28,7 @@ public class rotated_sorted_array_search{
         }
         return start;
     }
+    // binary search to find the target element
     static int search(int nums[], int start, int end,int target){
             while(start<=end){
                 int mid = (start + end) / 2;

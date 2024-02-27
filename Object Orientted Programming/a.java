@@ -10,16 +10,21 @@ public class a {
         Pen p1 = new Pen(); // created a Pen object called p1 -> constructor
         p1.setColor("Red");
         p1.setTip(5);
-        System.out.println(p1.tip);
-        p1.color = "Yellow";
-        System.out.println(p1.color);
+        System.out.println(p1.getTip());
+        System.out.println(p1.getColor());
     }
 }
 
 class Pen {
     // Properties + functions
-    String color;
-    int tip;
+   private String color;
+   private int tip;
+    String getColor(){
+        return this.color;
+    }
+    int getTip(){
+        return this.tip;
+    }
     
     void setColor(String newColor) {
         color = newColor;
